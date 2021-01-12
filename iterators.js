@@ -6,6 +6,10 @@
  ************************************/
 const logger = function (array) {
   // Your code here
+  array.forEach((arr) => {
+    console.log(arr);
+  });
+
 };
 
 /*************************************
@@ -21,8 +25,16 @@ const logger = function (array) {
  ************************************/
 const toCelsius = function (temperatures) {
   // Your code here
-};
+  const newArray = temperatures.map((temperature) => 
 
+   ( temperature - 32) * (5/9)
+
+
+ );
+  return newArray;
+  
+};
+console.log(toCelsius([212, 122])); // should be: [100, 50];
 /**************************************
  * hottestDays(temperatures, threshhold)
  *
@@ -33,6 +45,16 @@ const toCelsius = function (temperatures) {
  ***************************************/
 const hottestDays = function (temperatures, threshhold) {
   // Your code here
+  const newArray = temperatures.filter((temperature) =>
+  temperature > threshhold
+
+   
+
+
+ );
+  return newArray;
+
+  
 };
 
 /******************************************
@@ -51,12 +73,19 @@ const hottestDays = function (temperatures, threshhold) {
  *******************************************/
 const logHottestDays = function (temperatures, threshhold) {
   // Your code here
+  let raa = hottestDays(temperatures , threshhold );
+
+  let ww = toCelsius(raa);
+
+  let last = logger(ww);
+
+
 };
 
 /* Uncomment the following lines to test your code... */
 
-// logger([1, 2, 3, 4, 5, 6, 7]);
-// console.log(toCelsius([212, 122])); // should be: [100, 50];
+ //logger([1, 2, 3, 4, 5, 6, 7]);
+
 // console.log(hottestDays([1, 2, 3, 4, 5, 6, 7, 8, 13, 156, 1765], 5)); // should be : [6, 7, 8, 13, 156, 1765]
 // logHottestDays([140, 68, 212, 45, 149, 122, 19], 80); // should log "60", "100", "65", and "50"
 
